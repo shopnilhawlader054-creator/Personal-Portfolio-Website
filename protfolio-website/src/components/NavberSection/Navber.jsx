@@ -1,25 +1,51 @@
 import React from 'react'
-import Logo from './logo'
+import PcCard from './NavberCard/PcCard';
 import DarkMode from './DarkMode'
+import HmgBtn from './HmgBtn';
+import MobileCard from './NavberCard/MobileCard';
+
+import Logo from './logo';
+import { useState } from 'react';
 function Navber() {
+   const [isOpen, setIsOpen] = useState(false);
+   const [activeSection, setActiveSection] = useState('Home');
+   
+   function navcardbtn(card){
+    setActiveSection(card)
+   }
+   function hmgbtn(){
+    setIsOpen(!isOpen)
+   }
+        const navLinks = [
+    { name: 'Home', href: '#Home' },
+    { name: 'About', href: '#about' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'More', href: '#More'},
+  ];
+
+
   return (
     <header className=' fixed top-0 w-full left-0 z-50  bg-[#121212]/80 backdrop:backdrop-blur-md  border-b border-white/10  transition-all duration-300'>
-       <div className="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
-         {/* Brand / Logo */}
-        <a href="#home" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center font-bold text-white shadow-[0_0_15px_rgba(255,255,255,0.05)] shrink-0 group-hover:bg-white/10 transition-all">
-            SH
-          </div>
-          <span className="text-xl font-bold tracking-tight text-white group-hover:text-neutral-300 transition-colors">
-            Shopnil<span className="text-neutral-500">.</span>
-          </span>
-        </a>
+       <div className="relative max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
+        <Logo/>
 
-       <Logo/>
+     <PcCard navLinks={navLinks} navcardbtn={navcardbtn} activeSection={activeSection}/>
+   
+     <div className="flex items-center  gap-3">
        <DarkMode/>
+       <HmgBtn hmgbtn={hmgbtn} isOpen={isOpen}/>
+
+     </div>
+      <MobileCard  hmgbtn={hmgbtn} isOpen={isOpen} navLinks={navLinks} navcardbtn={navcardbtn} activeSection={activeSection}/>
        </div>
+     
     </header>
   )
 }
 
 export default Navber
+
+
+
+

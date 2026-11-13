@@ -3,7 +3,9 @@ import Hero from './components/HeroSection/Hero'
 import Navbar from './components/NavberSection/Navber'
 import Project from './components/MainSection/ProjectSection/Project'
 import About from './components/HeroSection/AboutMe/About'
-import TechGlobe from './components/MainSection/Skill'
+import Skill from './components/MainSection/SkillSection/Skill'
+import Contect from './components/MainSection/ContectSection/Contect'
+import Fotter from './components/FotterSection/Fotter'
 // import { useState } from 'react';
 // const [bgcolor,setBgcolor] = useState('')
 
@@ -11,15 +13,20 @@ import TechGlobe from './components/MainSection/Skill'
 
 function App() {
   return (
-    <section  className='relative w-full min-h-screen  bg-[#121212] text-white flex flex-col items-center justify-center px-4 md:px-12 overflow-hidden'>
+    <>
+    <section id='Home'  className='relative w-full min-h-screen  bg-[#121212] text-white flex flex-col items-center justify-center px-4 md:px-12 overflow-hidden'>
       
-      <Navbar/>
+    <Navbar/>
      <Hero/>
      <About/>
      <Project/>
    
-    <TechGlobe/>
+    <Skill/>
+    <Contect/>
+    
     </section>
+    <Fotter/>
+    </>
 
   )
 }

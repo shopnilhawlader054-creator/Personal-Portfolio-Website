@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 
 function DarkMode() {
     const[isDarkMode,setIsDarkMode] = useState(true)
-    const[isOpen,setIsOpen] = useState(false)
+   
   return (
     <>
-     {/* Action Controls Container */}
-        <div className="flex items-center gap-3">
+    
+    
           {/* Dark / Light Mode Toggle Button */}
           <button
             onClick={() =>setIsDarkMode(!isDarkMode)}
@@ -25,31 +25,7 @@ function DarkMode() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
               </svg>
             )}
-          </button>
-
-          {/* Mobile Hamburger Toggle */}
-          <button
-            onClick={() =>setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-xl bg-white/5 text-neutral-300 hover:text-white border border-white/10 shrink-0 focus:outline-none"
-            aria-label="Toggle Navigation"
-          >
-            <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
-               {isOpen ? (
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M18.278 16.864a1 1 0 01-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 01-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 011.414-1.414l4.829 4.828 4.828-4.828a1 1 0 111.414 1.414l-4.828 4.829 4.828 4.828z"
-                />
-              ) : ( 
-                 <path
-                  fillRule="evenodd"
-                  d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z"
-                />
-              )} 
-            </svg>
-          </button>
-        </div>
-      
+          </button>  
     </>
   )
 }

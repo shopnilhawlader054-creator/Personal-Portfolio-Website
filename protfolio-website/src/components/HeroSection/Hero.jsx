@@ -22,7 +22,7 @@ function Hero() {
 <>
 
 
-  <div id='home' className='relative w-full max-w-5xl flex flex-col md:flex-row justify-between gap-12 py-12'>
+  <div id='home' className='relative w-full max-w-5xl flex flex-col md:flex-row justify-between gap-12 py-12 mt-20'>
     {/* left side card */}
     <LeftCard/>
     
