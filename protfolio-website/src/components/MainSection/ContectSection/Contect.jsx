@@ -4,7 +4,7 @@ import ContectForm from './ContectForm'
 function Contect() {
   return (
     <>
-    <section className="w-full max-w-2xl mx-auto px-4 sm:px-6 py-12 z-10">
+    <section id='contact' className="w-full max-w-2xl mx-auto px-4 sm:px-6 py-12 z-10">
       
       {/* সেকশন হেডার */}
       <div className="text-center mb-10">

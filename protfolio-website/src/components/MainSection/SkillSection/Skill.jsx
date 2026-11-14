@@ -1,7 +1,7 @@
 import React from 'react'
 import AnimationSkill from './3Dskill'
 import SkillCard from './SkillCard'
-function Skill() {
+function Skill({isDarkMode}) {
   return (
         <section id="skills" className="relative w-full py-24 px-4 md:px-12 max-w-6xl mx-auto text-white flex flex-col items-center justify-center overflow-hidden">
     
@@ -20,7 +20,7 @@ function Skill() {
          
       </div>
 
-    <AnimationSkill/>
+    <AnimationSkill  isDarkMode={isDarkMode}/>
     <SkillCard/>
     
 

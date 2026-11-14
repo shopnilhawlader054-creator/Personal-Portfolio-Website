@@ -6,9 +6,11 @@ import MobileCard from './NavberCard/MobileCard';
 
 import Logo from './logo';
 import { useState } from 'react';
-function Navber() {
+function Navber({isDarkMode,DarkModeFunction}) {
    const [isOpen, setIsOpen] = useState(false);
    const [activeSection, setActiveSection] = useState('Home');
+ 
+  
    
    function navcardbtn(card){
     setActiveSection(card)
@@ -26,14 +28,16 @@ function Navber() {
 
 
   return (
-    <header className=' fixed top-0 w-full left-0 z-50  bg-[#121212]/80 backdrop:backdrop-blur-md  border-b border-white/10  transition-all duration-300'>
+   <header className={`fixed top-0 w-full left-0 z-50 backdrop-blur-md border-b border-white/10 transition-all duration-300 ${
+  isDarkMode ? 'bg-[#121212]/85' : 'bg-[#0f172a]/85'
+}`}>
        <div className="relative max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
         <Logo/>
 
      <PcCard navLinks={navLinks} navcardbtn={navcardbtn} activeSection={activeSection}/>
    
      <div className="flex items-center  gap-3">
-       <DarkMode/>
+       <DarkMode DarkModeFunction={DarkModeFunction} isDarkMode={isDarkMode}/>
        <HmgBtn hmgbtn={hmgbtn} isOpen={isOpen}/>
 
      </div>

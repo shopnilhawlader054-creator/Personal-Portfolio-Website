@@ -1,16 +1,18 @@
 
 import React, { useState } from 'react';
 
-function DarkMode() {
-    const[isDarkMode,setIsDarkMode] = useState(true)
+function DarkMode({isDarkMode,DarkModeFunction}) {
+ function DarkBtn(){
+  DarkModeFunction()
+ }
    
   return (
     <>
     
-    
+
           {/* Dark / Light Mode Toggle Button */}
           <button
-            onClick={() =>setIsDarkMode(!isDarkMode)}
+            onClick={() =>DarkBtn()}
             className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-neutral-300 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all shrink-0 focus:outline-none"
             aria-label="Toggle Theme"
           >

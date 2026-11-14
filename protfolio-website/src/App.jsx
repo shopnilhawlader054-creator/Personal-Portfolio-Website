@@ -6,22 +6,26 @@ import About from './components/HeroSection/AboutMe/About'
 import Skill from './components/MainSection/SkillSection/Skill'
 import Contect from './components/MainSection/ContectSection/Contect'
 import Fotter from './components/FotterSection/Fotter'
-// import { useState } from 'react';
+import { useState } from 'react';
 // const [bgcolor,setBgcolor] = useState('')
 
 
 
 function App() {
+    const[isDarkMode,setIsDarkMode] = useState(true)
+     function darkbtn(){
+    setIsDarkMode(!isDarkMode)
+   }
   return (
     <>
-    <section id='Home'  className='relative w-full min-h-screen  bg-[#121212] text-white flex flex-col items-center justify-center px-4 md:px-12 overflow-hidden'>
+    <section id='Home'  className={`relative w-full min-h-screen ${ isDarkMode ?' bg-[#121212]': 'bg-[#0f172a]'} text-white flex flex-col items-center justify-center px-4 md:px-12 overflow-hidden`}>
       
-    <Navbar/>
+    <Navbar DarkModeFunction={darkbtn} isDarkMode={isDarkMode}/>
      <Hero/>
      <About/>
-     <Project/>
+     <Project  isDarkMode={isDarkMode}/>
    
-    <Skill/>
+    <Skill  isDarkMode={isDarkMode}/>
     <Contect/>
     
     </section>

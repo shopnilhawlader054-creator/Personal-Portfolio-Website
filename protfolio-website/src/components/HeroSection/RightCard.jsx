@@ -4,7 +4,7 @@ function RightCard() {
   return (
     <> 
      {/* RIGHT SIDE: 3D Character Container */}
-          <div className='relative w-full md:w-[450px] h-[400px] flex items-center justify-center shrink-0'>
+          <div className='relative hidden md:flex w-full md:w-[450px] h-[400px]  items-center justify-center shrink-0'>
             
             {/* Background Glow Effect */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180px] h-[180px] rounded-full bg-white/15 blur-3xl pointer-events-none"></div>
