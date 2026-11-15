@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Footer() {
+function Footer({ isDarkMode }) {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -23,64 +23,88 @@ function Footer() {
         }
       `}</style>
 
-      <footer className="w-full bg-neutral-950 border-t border-white/10 py-10 sm:py-12 px-4 sm:px-8 relative z-10">
+      <footer className={`w-full border-t py-10 sm:py-12 px-4 sm:px-8 relative z-10 transition-colors duration-300 ${
+        isDarkMode 
+          ? 'bg-neutral-950 border-white/10 text-white' 
+          : 'bg-[#0f172a] border-slate-800 text-slate-100'
+      }`}>
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           
           {/* বাম পাশ: সিগনেচার স্টাইল এবং টাইপিং অ্যানিমেশন নাম */}
           <div className="text-center md:text-left">
-            <h3 className="text-xl sm:text-2xl font-serif italic tracking-wide text-white inline-block">
+            <h3 className="text-xl sm:text-2xl font-serif italic tracking-wide inline-block">
               <span className="inline-block animate-typing-once pr-1">
                 Shopnil Hawlader
               </span>
             </h3>
-            <p className="text-[11px] sm:text-xs font-mono text-neutral-400 uppercase tracking-widest mt-1.5">
-              Full-Stack Developer & Software Engineer © {currentYear}
+            <p className={`text-[11px] sm:text-xs font-mono uppercase tracking-widest mt-1.5 ${
+              isDarkMode ? 'text-neutral-400' : 'text-slate-400'
+            }`}>
+              Full-Stack Developer © {currentYear}
             </p>
           </div>
 
-          {/* ডান পাশ: গোল আইকন এবং টেক্সটসহ সোশ্যাল মিডিয়া লিংকসমূহ */}
+          {/* ডান পাশ: গোল আইকন এবং টেক্সটসহ সোশ্যাল ও কন্টাক্ট লিংকসমূহ */}
           <div className="flex items-center gap-3 sm:gap-4">
             
             {/* GitHub */}
             <a
-              href="https://github.com" 
+              href="https://github.com/shopnilhawlader054-creator" 
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2.5 rounded-2xl bg-white/[0.02] border border-white/10 text-neutral-300 hover:text-white hover:border-white/25 hover:bg-white/[0.06] text-xs font-medium transition-all flex items-center gap-2.5 group"
+              className={`px-4 py-2.5 rounded-2xl border text-xs font-medium transition-all flex items-center gap-2.5 group ${
+                isDarkMode 
+                  ? 'bg-white/[0.02] border-white/10 text-neutral-300 hover:text-white hover:border-white/25 hover:bg-white/[0.06]' 
+                  : 'bg-slate-900/60 border-slate-700 text-slate-300 hover:text-white hover:border-slate-500 hover:bg-slate-900'
+              }`}
             >
-              <span className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-[11px] font-mono group-hover:bg-white group-hover:text-black transition-colors">
+              <span className={`w-7 h-7 rounded-full flex items-center justify-center text-[11px] font-mono transition-colors ${
+                isDarkMode ? 'bg-white/10 group-hover:bg-white group-hover:text-black' : 'bg-slate-800 group-hover:bg-slate-100 group-hover:text-slate-950'
+              }`}>
                 GH
               </span>
               <span className="font-mono tracking-wide">GitHub</span>
-              <span className="text-[10px] text-neutral-500 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">↗</span>
+              <span className={`text-[10px] transition-all ${isDarkMode ? 'text-neutral-500 group-hover:text-white' : 'text-slate-400 group-hover:text-white'} group-hover:translate-x-0.5 group-hover:-translate-y-0.5`}>↗</span>
             </a>
 
             {/* LinkedIn */}
             <a
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/shopnil-hawlader-560929418" 
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2.5 rounded-2xl bg-white/[0.02] border border-white/10 text-neutral-300 hover:text-white hover:border-white/25 hover:bg-white/[0.06] text-xs font-medium transition-all flex items-center gap-2.5 group"
+              className={`px-4 py-2.5 rounded-2xl border text-xs font-medium transition-all flex items-center gap-2.5 group ${
+                isDarkMode 
+                  ? 'bg-white/[0.02] border-white/10 text-neutral-300 hover:text-white hover:border-white/25 hover:bg-white/[0.06]' 
+                  : 'bg-slate-900/60 border-slate-700 text-slate-300 hover:text-white hover:border-slate-500 hover:bg-slate-900'
+              }`}
             >
-              <span className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-[11px] font-mono group-hover:bg-white group-hover:text-black transition-colors">
+              <span className={`w-7 h-7 rounded-full flex items-center justify-center text-[11px] font-mono transition-colors ${
+                isDarkMode ? 'bg-white/10 group-hover:bg-white group-hover:text-black' : 'bg-slate-800 group-hover:bg-slate-100 group-hover:text-slate-950'
+              }`}>
                 IN
               </span>
               <span className="font-mono tracking-wide">LinkedIn</span>
-              <span className="text-[10px] text-neutral-500 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">↗</span>
+              <span className={`text-[10px] transition-all ${isDarkMode ? 'text-neutral-500 group-hover:text-white' : 'text-slate-400 group-hover:text-white'} group-hover:translate-x-0.5 group-hover:-translate-y-0.5`}>↗</span>
             </a>
 
-            {/* Facebook */}
+            {/* Email (Gmail Web Compose Link) */}
             <a
-              href="https://facebook.com" 
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=shopnilhawlader054@gmail.com" 
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2.5 rounded-2xl bg-white/[0.02] border border-white/10 text-neutral-300 hover:text-white hover:border-white/25 hover:bg-white/[0.06] text-xs font-medium transition-all flex items-center gap-2.5 group"
+              className={`px-4 py-2.5 rounded-2xl border text-xs font-medium transition-all flex items-center gap-2.5 group ${
+                isDarkMode 
+                  ? 'bg-white/[0.02] border-white/10 text-neutral-300 hover:text-white hover:border-white/25 hover:bg-white/[0.06]' 
+                  : 'bg-slate-900/60 border-slate-700 text-slate-300 hover:text-white hover:border-slate-500 hover:bg-slate-900'
+              }`}
             >
-              <span className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-[11px] font-mono group-hover:bg-white group-hover:text-black transition-colors">
-                FB
+              <span className={`w-7 h-7 rounded-full flex items-center justify-center text-[11px] font-mono transition-colors ${
+                isDarkMode ? 'bg-white/10 group-hover:bg-white group-hover:text-black' : 'bg-slate-800 group-hover:bg-slate-100 group-hover:text-slate-950'
+              }`}>
+                ✉
               </span>
-              <span className="font-mono tracking-wide">Facebook</span>
-              <span className="text-[10px] text-neutral-500 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">↗</span>
+              <span className="font-mono tracking-wide">Email</span>
+              <span className={`text-[10px] transition-all ${isDarkMode ? 'text-neutral-500 group-hover:text-white' : 'text-slate-400 group-hover:text-white'} group-hover:translate-x-0.5 group-hover:-translate-y-0.5`}>↗</span>
             </a>
 
           </div>

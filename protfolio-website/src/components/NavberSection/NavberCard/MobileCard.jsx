@@ -1,7 +1,16 @@
 import React from 'react'
+import SocialDropdown from '../SocialDropdown'
+import { useState } from 'react';
 
 function MobileCard({navLinks,isOpen,hmgbtn,activeSection,navcardbtn}) {
+  const[showmore,setShowMore]=useState(false)
   function hmgbtnrun(card){
+    const more = card === 'More'
+      if (more){
+        navcardbtn(card)
+       setShowMore(!showmore)
+       return
+      }
     navcardbtn(card)
     hmgbtn()
   }
@@ -26,6 +35,8 @@ function MobileCard({navLinks,isOpen,hmgbtn,activeSection,navcardbtn}) {
               {link.name}
             </a>
           ))}
+            
+        {showmore &&(<SocialDropdown/>)}
         </div>
       )}
     </>

@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react';
+import Projectdetals from './projectdetals';
 
-function ProjectCard({isDarkMode}) {
+function ProjectCard({ isDarkMode }) {
+  // প্রজেক্টের বিস্তারিত তথ্যের জন্য স্টেট
+  const [selectedProject, setSelectedProject] = useState(null);
+  function vewdetals(){
+  setSelectedProject(null)
+  }
+
   const projects = [
     {
       id: 1,
       title: "Pack Solution BD",
       category: "Full-Stack E-commerce",
       desc: "Custom e-commerce landing page & order management system with custom admin views.",
+      longDesc: "Pack Solution BD is a full-stack e-commerce and packaging solutions platform built to handle custom product sizes, category filtering, and seamless order tracking. It includes a custom admin dashboard for managing inventory and customer inquiries efficiently.",
+      features: ["Custom Admin Dashboard", "Steadfast Courier Integration", "Dynamic Product Sizes & Categories", "Responsive Tailwind UI"],
       tech: ["Django", "PostgreSQL", "Tailwind"],
       image: "https://images.unsplash.com/photo-1557821552-17105176674c?w=600&auto=format&fit=crop&q=60" 
     },
@@ -15,6 +24,8 @@ function ProjectCard({isDarkMode}) {
       title: "Blood Donate System",
       category: "Web Application",
       desc: "Donor profiles, multi-field filtering, and secure user authentication workflow.",
+      longDesc: "A life-saving web application designed to connect blood donors with people in urgent need. Features robust user authentication, donor profile management, and multi-field search filtering by blood group and location.",
+      features: ["Secure User Authentication", "Donor Profile Management", "Advanced Search & Filtering", "Request & Donation Tracking"],
       tech: ["Django", "Python", "Tailwind CSS"],
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&auto=format&fit=crop&q=60"
     },
@@ -23,6 +34,8 @@ function ProjectCard({isDarkMode}) {
       title: "Bank Management App",
       category: "Frontend UI",
       desc: "Interactive dashboard with React Router DOM, state management, and Tailwind.",
+      longDesc: "A modern frontend banking simulation dashboard built with React and Vite. It provides users with an intuitive interface to track account balances, view transaction histories, and navigate smoothly using React Router DOM.",
+      features: ["Interactive Dashboard", "React Router DOM Navigation", "State-managed Transactions", "Sleek Dark Mode UI"],
       tech: ["React", "Vite", "Tailwind CSS"],
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=60"
     }
@@ -62,7 +75,7 @@ function ProjectCard({isDarkMode}) {
               <div className="w-1.5 h-1.5 rounded-full bg-neutral-400 animate-ping"></div>
             </div>
 
-            {/* টিভি স্ক্রিন (কন্ডিশনাল ব্যাকগ্রাউন্ড গ্রেডিয়েন্টসহ) */}
+            {/* টিভি স্ক্রিন */}
             <div 
               className={`relative w-full h-[220px] rounded-xl overflow-hidden border flex flex-col justify-between p-4 transition-all duration-300 ${
                 isDarkMode ? 'border-neutral-800' : 'border-slate-700'
@@ -74,7 +87,6 @@ function ProjectCard({isDarkMode}) {
                 boxShadow: 'inset 0 0 30px rgba(0, 0, 0, 0.9)'
               }}
             >
-              
               {/* স্ক্যানলাইন ওভারলে */}
               <div className="absolute inset-0 scanlines pointer-events-none z-20 opacity-50"></div>
 
@@ -126,20 +138,30 @@ function ProjectCard({isDarkMode}) {
 
               <div className="flex items-center justify-between text-[11px] font-mono text-neutral-400 pt-1">
                 <span>MODEL: CRT-V{index + 1}</span>
-                <a 
-                  href="#contact" 
-                  className="text-white hover:underline flex items-center gap-1 font-medium"
+                {/* View Details বাটনে ক্লিক করলে স্টেট সেট হবে */}
+                <button 
+                  onClick={() => setSelectedProject(project)}
+                  className="text-white hover:underline flex items-center gap-1 font-medium cursor-pointer"
                 >
                   View Details →
-                </a>
+                </button>
               </div>
             </div>
 
           </div>
         ))}
       </div>
+
+      {/* প্রজেক্ট ডিটেইলস মোডাল (Modal) */}
+      {selectedProject && (
+       < Projectdetals selectedProject={selectedProject} isDarkMode={isDarkMode} viewdetals={vewdetals}/>
+      )}
     </>
-  )
+  );
 }
 
-export default ProjectCard
+ProjectCard.defaultProps = {
+  isDarkMode: true
+};
+
+export default ProjectCard;
