@@ -8,6 +8,8 @@ import Contect from './components/MainSection/ContectSection/Contect'
 import Fotter from './components/FotterSection/Fotter'
 import { useState } from 'react';
 
+import safePackingImg from "./assets/ProjectImage/Screenshot 2026-08-27 004212.png";
+
 function App() {
     const [isDarkMode, setIsDarkMode] = useState(true)
     
@@ -29,7 +31,7 @@ function App() {
         <Navbar DarkModeFunction={darkbtn} isDarkMode={isDarkMode}/>
         <Hero/>
         <About/>
-        <Project isDarkMode={isDarkMode}/>
+        <Project isDarkMode={isDarkMode} safePackingImg={safePackingImg}/>
         <Skill isDarkMode={isDarkMode}/>
         <Contect />
         

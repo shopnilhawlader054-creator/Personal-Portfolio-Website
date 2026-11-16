@@ -1,15 +1,15 @@
 import React from 'react';
 
-function SocialDropdown({ isDarkMode }) {
+function SocialDropdown({isDarkMode }) {
   return (
     /* 
-      isDarkMode true হলে -> চারকোল ডার্ক (#1a1a1a) + নিউট্রাল বর্ডার
-      isDarkMode false হলে -> স্লেট নেভি ডার্ক (#1e293b) + স্লেট বর্ডার
+      isDarkMode true হলে -> আপনার ওয়েবসাইটের ব্যাকগ্রাউন্ড #121212
+      isDarkMode false হলে -> আপনার দেওয়া ব্যাকগ্রাউন্ড #0f172a
     */
     <div className={`w-full md:absolute md:right-0 md:top-full md:mt-2 md:w-56 p-3 rounded-2xl border backdrop-blur-2xl shadow-2xl z-50 flex flex-col space-y-2 animate-fadeIn transition-colors duration-300 ${
       isDarkMode 
-        ? 'bg-[#1a1a1a]/95 border-neutral-800 text-white' 
-        : 'bg-[#1e293b]/95 border-slate-700/80 text-slate-100'
+        ?  'bg-[#121212]/95 border-neutral-800 text-white' 
+        : 'bg-[#0f172a]/95 border-slate-700/80 text-slate-100'
     }`}>
       
       {/* হেডার লেবেল */}

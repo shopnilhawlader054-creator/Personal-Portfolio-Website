@@ -35,7 +35,7 @@ function Navber({isDarkMode,DarkModeFunction}) {
        <div className="relative max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
         <Logo/>
 
-     <PcCard navLinks={navLinks} navcardbtn={navcardbtn} activeSection={activeSection}/>
+     <PcCard navLinks={navLinks} navcardbtn={navcardbtn} isDarkMode={isDarkMode} activeSection={activeSection}/>
    
      <div className="flex items-center  gap-3">
        <DarkMode DarkModeFunction={DarkModeFunction} isDarkMode={isDarkMode}/>

@@ -1,23 +1,25 @@
 import React, { useState } from 'react';
 import Projectdetals from './projectdetals';
 
-function ProjectCard({ isDarkMode }) {
+function ProjectCard({ isDarkMode,safePackingImg}) {
   // প্রজেক্টের বিস্তারিত তথ্যের জন্য স্টেট
   const [selectedProject, setSelectedProject] = useState(null);
   function vewdetals(){
   setSelectedProject(null)
   }
 
-  const projects = [
+const projects = [
     {
       id: 1,
-      title: "Pack Solution BD",
+      title: "Safe Packing BD",
       category: "Full-Stack E-commerce",
       desc: "Custom e-commerce landing page & order management system with custom admin views.",
-      longDesc: "Pack Solution BD is a full-stack e-commerce and packaging solutions platform built to handle custom product sizes, category filtering, and seamless order tracking. It includes a custom admin dashboard for managing inventory and customer inquiries efficiently.",
+      longDesc: "Safe Packing BD is a full-stack e-commerce and packaging solutions platform built to handle custom product sizes, category filtering, and seamless order tracking. It includes a custom admin dashboard for managing inventory and customer inquiries efficiently.",
       features: ["Custom Admin Dashboard", "Steadfast Courier Integration", "Dynamic Product Sizes & Categories", "Responsive Tailwind UI"],
       tech: ["Django", "PostgreSQL", "Tailwind"],
-      image: "https://images.unsplash.com/photo-1557821552-17105176674c?w=600&auto=format&fit=crop&q=60" 
+      // শুরুতে https:// যোগ করা হয়েছে
+      repo: 'https://github.com/shopnilhawlader054-creator/Pack-Solution-Bd',
+      image:safePackingImg
     },
     {
       id: 2,
@@ -27,6 +29,8 @@ function ProjectCard({ isDarkMode }) {
       longDesc: "A life-saving web application designed to connect blood donors with people in urgent need. Features robust user authentication, donor profile management, and multi-field search filtering by blood group and location.",
       features: ["Secure User Authentication", "Donor Profile Management", "Advanced Search & Filtering", "Request & Donation Tracking"],
       tech: ["Django", "Python", "Tailwind CSS"],
+      // শুরুতে https:// যোগ করা হয়েছে
+      repo: 'https://github.com/shopnilhawlader054-creator/Blood-Donate-Request-System',
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&auto=format&fit=crop&q=60"
     },
     {
@@ -37,6 +41,8 @@ function ProjectCard({ isDarkMode }) {
       longDesc: "A modern frontend banking simulation dashboard built with React and Vite. It provides users with an intuitive interface to track account balances, view transaction histories, and navigate smoothly using React Router DOM.",
       features: ["Interactive Dashboard", "React Router DOM Navigation", "State-managed Transactions", "Sleek Dark Mode UI"],
       tech: ["React", "Vite", "Tailwind CSS"],
+      // শুরুতে https:// যোগ করা হয়েছে
+      repo: "https://github.com/shopnilhawlader054-creator/Bank-Account-Transaction-Management-System",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=60"
     }
   ];

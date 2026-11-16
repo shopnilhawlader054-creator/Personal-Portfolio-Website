@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import SocialDropdown from '../SocialDropdown';
 
-function PcCard({navLinks,navcardbtn,activeSection}) {
+function PcCard({navLinks,navcardbtn,activeSection,isDarkMode}) {
   const[showmore,setShowMore]=useState(false)
 
     function navcardbtnrun(card){
@@ -39,7 +39,7 @@ function PcCard({navLinks,navcardbtn,activeSection}) {
         })
 
         }
-        {showmore &&(<SocialDropdown/>)}
+        {showmore &&(<SocialDropdown isDarkMode={isDarkMode}/>)}
          
     </nav>
      
