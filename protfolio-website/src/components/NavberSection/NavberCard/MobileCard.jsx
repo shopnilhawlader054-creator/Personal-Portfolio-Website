@@ -20,13 +20,13 @@ function MobileCard({ navLinks, isOpen, hmgbtn, activeSection, navcardbtn, isDar
   return (
     <>
       {isOpen && (
-        <div className={`absolute md:hidden top-full right-0 w-1/2 border-l border-b backdrop-blur-2xl p-3 space-y-1.5 shadow-2xl transition-all duration-300 max-h-[70vh] overflow-y-auto text-left z-[999] animate-fadeIn rounded-bl-2xl ${
+        <div className={`absolute md:hidden top-full right-4 w-64 max-w-[85vw] border-l border-b backdrop-blur-2xl p-3 space-y-1.5 shadow-2xl transition-all duration-300 max-h-[70vh] overflow-y-auto text-left z-[999] animate-fadeIn rounded-2xl ${
           isDarkMode 
             ? 'bg-[#121212]/95 border-white/10 text-white' 
             : 'bg-[#0f172a]/95 border-slate-700/80 text-slate-100'
         }`}>
           
-          {/* ছোট একটি মেনু টাইটেল বা ডেকোরেশন হেডার (ফোনে দেখতে প্রিমিয়াম লাগবে) */}
+          {/* হেডার */}
           <div className={`text-[10px] font-mono uppercase tracking-widest px-3 py-1 mb-1 border-b ${
             isDarkMode ? 'text-neutral-500 border-white/5' : 'text-slate-400 border-slate-700/50'
           }`}>
@@ -55,7 +55,7 @@ function MobileCard({ navLinks, isOpen, hmgbtn, activeSection, navcardbtn, isDar
             
           {/* সোশ্যাল ড্রপডাউন মেনু */}
           {showmore && (
-            <div className="pt-2 animate-fadeIn z-50 flex flex-col items-start">
+            <div className="pt-2 animate-fadeIn z-50 flex flex-col items-start w-full">
               <SocialDropdown isDarkMode={isDarkMode} />
             </div>
           )}
