@@ -2,7 +2,7 @@ import React from 'react'
 import SocialDropdown from '../SocialDropdown'
 import { useState } from 'react';
 
-function MobileCard({navLinks,isOpen,hmgbtn,activeSection,navcardbtn}) {
+function MobileCard({navLinks,isOpen,hmgbtn,activeSection,navcardbtn,isDarkMode,DarkModeFunction}) {
   const[showmore,setShowMore]=useState(false)
   function hmgbtnrun(card){
     const more = card === 'More'
@@ -36,7 +36,7 @@ function MobileCard({navLinks,isOpen,hmgbtn,activeSection,navcardbtn}) {
             </a>
           ))}
             
-        {showmore &&(<SocialDropdown/>)}
+        {showmore &&(<SocialDropdown DarkModeFunction={DarkModeFunction} isDarkMode={isDarkMode} />)}
         </div>
       )}
     </>

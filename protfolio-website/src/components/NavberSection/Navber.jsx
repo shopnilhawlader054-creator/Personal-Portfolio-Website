@@ -42,7 +42,7 @@ function Navber({isDarkMode,DarkModeFunction}) {
        <HmgBtn hmgbtn={hmgbtn} isOpen={isOpen}/>
 
      </div>
-      <MobileCard  hmgbtn={hmgbtn} isOpen={isOpen} navLinks={navLinks} navcardbtn={navcardbtn} activeSection={activeSection}/>
+      <MobileCard  hmgbtn={hmgbtn} isOpen={isOpen} navLinks={navLinks} navcardbtn={navcardbtn} isDarkMode={isDarkMode}activeSection={activeSection}/>
        </div>
      
     </header>
